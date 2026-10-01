@@ -2,84 +2,122 @@
 <!DOCTYPE html>
 <!--
   ============================================================
-  PERFIL WEB · Ingeniería de Sistemas
-  Sharol Beltrán
+  PORTAFOLIO WEB · SHAROL BELTRÁN
+  Estudiante de Ingeniería de Sistemas
   ============================================================
 -->
+
 <html lang="es">
 
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>SHAROL BELTRÁN · Desarrolladora Web en formación</title>
+  <title>SHAROL BELTRÁN · Estudiante de Ingeniería de Sistemas</title>
 
   <meta name="description"
-        content="Portafolio de Sharol Beltrán, estudiante de Ingeniería de Sistemas y desarrolladora web en formación.">
+        content="Portafolio de Sharol Beltrán, estudiante de Ingeniería de Sistemas interesada en programación, desarrollo web y tecnología.">
 
+  <!-- ICONOS -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         crossorigin="anonymous"
         referrerpolicy="no-referrer">
 
+  <!-- FUENTES -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-  <!-- ========================= HEADER ========================= -->
+
+  <!-- =========================================================
+       HEADER
+  ========================================================== -->
 
   <div class="contenedor-header">
+
     <header>
 
       <div class="logo">
-        <a href="#inicio">SHAROL BELTRÁN</a>
+
+        <a href="#inicio">
+          SHAROL BELTRÁN
+        </a>
+
       </div>
 
+
       <nav id="nav">
+
         <ul>
+
           <li>
             <a href="#inicio"
                data-i18n="nav.home"
-               onclick="cerrarMenu()">INICIO</a>
+               onclick="cerrarMenu()">
+              INICIO
+            </a>
           </li>
 
           <li>
             <a href="#sobremi"
                data-i18n="nav.about"
-               onclick="cerrarMenu()">SOBRE MÍ</a>
+               onclick="cerrarMenu()">
+              SOBRE MÍ
+            </a>
           </li>
 
           <li>
             <a href="#skills"
                data-i18n="nav.skills"
-               onclick="cerrarMenu()">HABILIDADES</a>
+               onclick="cerrarMenu()">
+              HABILIDADES
+            </a>
           </li>
 
           <li>
             <a href="#curriculum"
                data-i18n="nav.resume"
-               onclick="cerrarMenu()">FORMACIÓN</a>
+               onclick="cerrarMenu()">
+              FORMACIÓN
+            </a>
           </li>
 
           <li>
             <a href="#portfolio"
                data-i18n="nav.portfolio"
-               onclick="cerrarMenu()">PROYECTOS</a>
+               onclick="cerrarMenu()">
+              PROYECTOS
+            </a>
           </li>
 
           <li>
             <a href="#contacto"
                data-i18n="nav.contact"
-               onclick="cerrarMenu()">CONTACTO</a>
+               onclick="cerrarMenu()">
+              CONTACTO
+            </a>
           </li>
+
         </ul>
+
       </nav>
 
+
       <div class="acciones-header">
+
 
         <!-- CAMBIO DE IDIOMA -->
 
@@ -87,13 +125,24 @@
                 class="btn-idioma"
                 type="button"
                 onclick="cambiarIdioma()"
-                aria-label="Cambiar a inglés">
+                aria-label="Cambiar idioma">
 
-          <span class="idioma-activo">ES</span>
-          <span class="idioma-sep">/</span>
-          <span class="idioma-inactivo">EN</span>
+          <span class="idioma-activo">
+            ES
+          </span>
+
+          <span class="idioma-sep">
+            /
+          </span>
+
+          <span class="idioma-inactivo">
+            EN
+          </span>
 
         </button>
+
+
+        <!-- MENÚ RESPONSIVE -->
 
         <button class="nav-responsive"
                 type="button"
@@ -107,14 +156,21 @@
       </div>
 
     </header>
+
   </div>
 
 
-  <!-- ========================= INICIO ========================= -->
+
+  <!-- =========================================================
+       INICIO
+  ========================================================== -->
 
   <section id="inicio" class="inicio">
 
     <div class="contenido-banner">
+
+
+      <!-- FOTO -->
 
       <div class="contenedor-img">
 
@@ -124,28 +180,47 @@
 
       </div>
 
-      <h1>SHAROL BELTRÁN</h1>
+
+      <!-- NOMBRE -->
+
+      <h1>
+        SHAROL BELTRÁN
+      </h1>
+
+
+      <!-- PROFESIÓN -->
 
       <h2 data-i18n="hero.role">
-        Estudiante de Ingeniería de Sistemas · Desarrolladora Web en formación
+        Estudiante de Ingeniería de Sistemas ·
+        Desarrolladora Web en formación
       </h2>
 
+
+      <!-- REDES -->
 
       <div class="redes">
 
         <a href="#"
            aria-label="GitHub">
+
           <i class="fa-brands fa-github"></i>
+
         </a>
+
 
         <a href="#"
            aria-label="LinkedIn">
+
           <i class="fa-brands fa-linkedin-in"></i>
+
         </a>
+
 
         <a href="mailto:sbeltran80@itfip.edu.co"
            aria-label="Correo electrónico">
+
           <i class="fa-solid fa-envelope"></i>
+
         </a>
 
       </div>
@@ -155,29 +230,37 @@
   </section>
 
 
-  <!-- ========================= SOBRE MÍ ========================= -->
 
-  <section id="sobremi" class="sobremi">
+  <!-- =========================================================
+       SOBRE MÍ
+  ========================================================== -->
+
+  <section id="sobremi"
+           class="sobremi">
 
     <div class="contenido-seccion">
+
 
       <h2 data-i18n="about.title">
         Sobre Mí
       </h2>
 
+
       <p data-i18n="about.text">
 
-        Soy Sharol Beltrán, estudiante de Ingeniería de Sistemas y estoy dando
-        mis primeros pasos en el aprendizaje de la programación y la tecnología.
-        Me interesa seguir fortaleciendo mis conocimientos y descubrir nuevas
-        herramientas que me permitan crecer en el área tecnológica.
+        Soy Sharol Beltrán, estudiante de Ingeniería de Sistemas
+        y estoy dando mis primeros pasos en el aprendizaje de la
+        programación y la tecnología. Me interesa seguir descubriendo
+        nuevas herramientas y conocimientos que me ayuden a crecer
+        tanto académica como profesionalmente.
 
       </p>
 
 
       <div class="fila">
 
-        <!-- INFORMACIÓN -->
+
+        <!-- INFORMACIÓN PERSONAL -->
 
         <div class="col">
 
@@ -185,7 +268,9 @@
             Información
           </h3>
 
+
           <ul class="datos">
+
 
             <li>
 
@@ -220,7 +305,7 @@
               </strong>
 
               <span data-i18n="about.valueLanguages">
-                Español (nativo) · Inglés en formación
+                Español nativo · Inglés en formación
               </span>
 
             </li>
@@ -234,14 +319,16 @@
 
               <span class="destacado"
                     data-i18n="about.valueStatus">
-                Abierta a proyectos académicos y prácticas
+                Abierta a proyectos académicos
               </span>
 
             </li>
 
+
           </ul>
 
         </div>
+
 
 
         <!-- INTERESES -->
@@ -252,7 +339,9 @@
             Intereses
           </h3>
 
+
           <div class="contenedor-intereses">
+
 
             <div class="interes">
 
@@ -289,7 +378,7 @@
 
             <div class="interes">
 
-              <i class="fa-solid fa-laptop-code"></i>
+              <i class="fa-solid fa-laptop"></i>
 
               <span data-i18n="interest.4">
                 TECNOLOGÍA
@@ -297,9 +386,22 @@
 
             </div>
 
+
+            <div class="interes">
+
+              <i class="fa-solid fa-book"></i>
+
+              <span data-i18n="interest.5">
+                APRENDIZAJE
+              </span>
+
+            </div>
+
+
           </div>
 
         </div>
+
 
       </div>
 
@@ -308,11 +410,16 @@
   </section>
 
 
-  <!-- ========================= HABILIDADES ========================= -->
 
-  <section id="skills" class="skills">
+  <!-- =========================================================
+       HABILIDADES
+  ========================================================== -->
+
+  <section id="skills"
+           class="skills">
 
     <div class="contenido-seccion">
+
 
       <h2 data-i18n="skills.title">
         Habilidades
@@ -320,6 +427,7 @@
 
 
       <div class="fila">
+
 
         <!-- HABILIDADES TÉCNICAS -->
 
@@ -329,6 +437,8 @@
             Habilidades técnicas
           </h3>
 
+
+          <!-- HTML Y CSS -->
 
           <div class="skill">
 
@@ -341,7 +451,9 @@
               <div class="progreso"
                    data-percent="70">
 
-                <span>70%</span>
+                <span>
+                  70%
+                </span>
 
               </div>
 
@@ -349,6 +461,8 @@
 
           </div>
 
+
+          <!-- JAVASCRIPT -->
 
           <div class="skill">
 
@@ -361,7 +475,9 @@
               <div class="progreso"
                    data-percent="55">
 
-                <span>55%</span>
+                <span>
+                  55%
+                </span>
 
               </div>
 
@@ -369,6 +485,8 @@
 
           </div>
 
+
+          <!-- MYSQL -->
 
           <div class="skill">
 
@@ -381,7 +499,9 @@
               <div class="progreso"
                    data-percent="60">
 
-                <span>60%</span>
+                <span>
+                  60%
+                </span>
 
               </div>
 
@@ -389,6 +509,8 @@
 
           </div>
 
+
+          <!-- GITHUB -->
 
           <div class="skill">
 
@@ -401,7 +523,33 @@
               <div class="progreso"
                    data-percent="55">
 
-                <span>55%</span>
+                <span>
+                  55%
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- PHP -->
+
+          <div class="skill">
+
+            <span class="skill-nombre">
+              PHP
+            </span>
+
+            <div class="barra-skill">
+
+              <div class="progreso"
+                   data-percent="40">
+
+                <span>
+                  40%
+                </span>
 
               </div>
 
@@ -412,34 +560,14 @@
         </div>
 
 
-        <!-- HABILIDADES PROFESIONALES -->
+
+        <!-- HABILIDADES PERSONALES -->
 
         <div class="col">
 
           <h3 data-i18n="skills.professional">
-            Habilidades profesionales
+            Habilidades personales
           </h3>
-
-
-          <div class="skill">
-
-            <span class="skill-nombre"
-                  data-i18n="skill.problem">
-              Resolución de problemas
-            </span>
-
-            <div class="barra-skill">
-
-              <div class="progreso"
-                   data-percent="70">
-
-                <span>70%</span>
-
-              </div>
-
-            </div>
-
-          </div>
 
 
           <div class="skill">
@@ -454,7 +582,9 @@
               <div class="progreso"
                    data-percent="80">
 
-                <span>80%</span>
+                <span>
+                  80%
+                </span>
 
               </div>
 
@@ -466,8 +596,30 @@
           <div class="skill">
 
             <span class="skill-nombre"
-                  data-i18n="skill.support">
-              Aprendizaje continuo
+                  data-i18n="skill.problem">
+              Resolución de problemas
+            </span>
+
+            <div class="barra-skill">
+
+              <div class="progreso"
+                   data-percent="70">
+
+                <span>
+                  70%
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="skill">
+
+            <span class="skill-nombre">
+              Responsabilidad
             </span>
 
             <div class="barra-skill">
@@ -475,7 +627,31 @@
               <div class="progreso"
                    data-percent="85">
 
-                <span>85%</span>
+                <span>
+                  85%
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="skill">
+
+            <span class="skill-nombre">
+              Aprendizaje continuo
+            </span>
+
+            <div class="barra-skill">
+
+              <div class="progreso"
+                   data-percent="90">
+
+                <span>
+                  90%
+                </span>
 
               </div>
 
@@ -496,7 +672,9 @@
               <div class="progreso"
                    data-percent="55">
 
-                <span>55%</span>
+                <span>
+                  55%
+                </span>
 
               </div>
 
@@ -513,11 +691,16 @@
   </section>
 
 
-  <!-- ========================= FORMACIÓN ========================= -->
 
-  <section id="curriculum" class="curriculum">
+  <!-- =========================================================
+       FORMACIÓN Y EXPERIENCIA
+  ========================================================== -->
+
+  <section id="curriculum"
+           class="curriculum">
 
     <div class="contenido-seccion">
+
 
       <h2 data-i18n="resume.title">
         Formación y experiencia
@@ -525,6 +708,7 @@
 
 
       <div class="fila">
+
 
         <!-- FORMACIÓN -->
 
@@ -534,6 +718,8 @@
             Formación
           </h3>
 
+
+          <!-- FORMACIÓN 1 -->
 
           <div class="item izq">
 
@@ -551,8 +737,10 @@
 
             <p data-i18n="edu.1.text">
 
-              Formación en programación, desarrollo web, bases de datos,
-              lógica, sistemas y diferentes áreas relacionadas con la tecnología.
+              Formación en programación, desarrollo web,
+              bases de datos, lógica de programación,
+              sistemas y diferentes áreas relacionadas
+              con la tecnología.
 
             </p>
 
@@ -563,10 +751,12 @@
           </div>
 
 
+          <!-- FORMACIÓN 2 -->
+
           <div class="item izq">
 
             <h4 data-i18n="edu.2.title">
-              Programación Web
+              Técnico Profesional en Programación Web
             </h4>
 
             <span class="casa">
@@ -574,14 +764,15 @@
             </span>
 
             <span class="fecha">
-              En curso
+              En formación
             </span>
 
             <p data-i18n="edu.2.text">
 
-              Desarrollo de conocimientos en HTML, CSS, JavaScript,
-              bases de datos, GitHub y herramientas para la creación
-              de aplicaciones y sitios web.
+              Aprendizaje de herramientas para crear
+              páginas web y aplicaciones, utilizando
+              HTML, CSS, JavaScript, bases de datos
+              y otras tecnologías.
 
             </p>
 
@@ -591,22 +782,26 @@
 
           </div>
 
+
         </div>
 
 
-        <!-- EXPERIENCIA -->
+
+        <!-- EXPERIENCIA / PROYECTOS ACADÉMICOS -->
 
         <div class="col derecha">
 
           <h3 data-i18n="resume.experience">
-            Experiencia
+            Experiencia académica
           </h3>
 
+
+          <!-- PROYECTO 1 -->
 
           <div class="item der">
 
             <h4 data-i18n="exp.1.title">
-              Proyecto académico de desarrollo web
+              Proyecto de plataforma académica
             </h4>
 
             <span class="casa">
@@ -619,9 +814,10 @@
 
             <p data-i18n="exp.1.text">
 
-              Desarrollo de una plataforma académica para gestionar
-              notas, asistencias y fallas justificadas, utilizando
-              herramientas de desarrollo web y bases de datos.
+              Diseño de una plataforma para organizar
+              notas, asistencias y fallas justificadas
+              de estudiantes. Se trabajaron conceptos
+              de diseño web y bases de datos.
 
             </p>
 
@@ -632,10 +828,12 @@
           </div>
 
 
+          <!-- PROYECTO 2 -->
+
           <div class="item der">
 
             <h4 data-i18n="exp.2.title">
-              Proyectos de bases de datos
+              Prácticas de bases de datos
             </h4>
 
             <span class="casa">
@@ -648,9 +846,10 @@
 
             <p data-i18n="exp.2.text">
 
-              Creación y práctica de bases de datos utilizando MySQL,
-              phpMyAdmin y consultas SQL, trabajando con tablas,
-              relaciones y diferentes tipos de información.
+              Creación de tablas, relaciones y consultas
+              utilizando MySQL y phpMyAdmin para
+              desarrollar ejercicios relacionados
+              con la gestión de información.
 
             </p>
 
@@ -659,6 +858,7 @@
             </div>
 
           </div>
+
 
         </div>
 
@@ -669,11 +869,16 @@
   </section>
 
 
-  <!-- ========================= PROYECTOS ========================= -->
 
-  <section id="portfolio" class="portfolio">
+  <!-- =========================================================
+       PROYECTOS
+  ========================================================== -->
+
+  <section id="portfolio"
+           class="portfolio">
 
     <div class="contenido-seccion">
+
 
       <h2 data-i18n="portfolio.title">
         Proyectos
@@ -683,7 +888,9 @@
       <div class="galeria">
 
 
-        <!-- PROYECTO 1 -->
+        <!-- =================================================
+             PROYECTO 1
+        ================================================== -->
 
         <a class="proyecto"
            href="#"
@@ -691,15 +898,77 @@
            rel="noopener">
 
           <img src="images/project-1.png"
-               alt="Proyecto académico de plataforma">
+               alt="Página web personal"
+               onerror="this.style.opacity=0">
+
 
           <div class="overlay">
 
             <h3 data-i18n="project.1.title">
-              Plataforma académica
+              Página web personal
             </h3>
 
             <p data-i18n="project.1.text">
+              HTML · CSS · Diseño web
+            </p>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             PROYECTO 2
+        ================================================== -->
+
+        <a class="proyecto"
+           href="#"
+           target="_blank"
+           rel="noopener">
+
+          <img src="images/project-2.png"
+               alt="Calculadora básica"
+               onerror="this.style.opacity=0">
+
+
+          <div class="overlay">
+
+            <h3 data-i18n="project.2.title">
+              Calculadora básica
+            </h3>
+
+            <p data-i18n="project.2.text">
+              HTML · CSS · JavaScript
+            </p>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             PROYECTO 3
+        ================================================== -->
+
+        <a class="proyecto"
+           href="#"
+           target="_blank"
+           rel="noopener">
+
+          <img src="images/project-3.png"
+               alt="Registro de estudiantes"
+               onerror="this.style.opacity=0">
+
+
+          <div class="overlay">
+
+            <h3 data-i18n="project.3.title">
+              Registro de estudiantes
+            </h3>
+
+            <p data-i18n="project.3.text">
               HTML · CSS · JavaScript · MySQL
             </p>
 
@@ -708,55 +977,6 @@
         </a>
 
 
-        <!-- PROYECTO 2 -->
-
-        <a class="proyecto"
-           href="#"
-           target="_blank"
-           rel="noopener">
-
-          <img src="images/project-2.png"
-               alt="Proyecto de base de datos">
-
-          <div class="overlay">
-
-            <h3 data-i18n="project.2.title">
-              Base de datos MySQL
-            </h3>
-
-            <p data-i18n="project.2.text">
-              MySQL · phpMyAdmin · SQL
-            </p>
-
-          </div>
-
-        </a>
-
-
-        <!-- PROYECTO 3 -->
-
-        <a class="proyecto"
-           href="#"
-           target="_blank"
-           rel="noopener">
-
-          <img src="images/project-3.png"
-               alt="Proyecto de programación web">
-
-          <div class="overlay">
-
-            <h3 data-i18n="project.3.title">
-              Proyecto de programación web
-            </h3>
-
-            <p data-i18n="project.3.text">
-              HTML · CSS · JavaScript
-            </p>
-
-          </div>
-
-        </a>
-
       </div>
 
     </div>
@@ -764,22 +984,28 @@
   </section>
 
 
-  <!-- ========================= CONTACTO ========================= -->
 
-  <section id="contacto" class="contacto">
+  <!-- =========================================================
+       CONTACTO
+  ========================================================== -->
+
+  <section id="contacto"
+           class="contacto">
 
     <div class="contenido-seccion">
+
 
       <h2 data-i18n="contact.title">
         Contacto
       </h2>
 
+
       <p class="contacto-intro"
          data-i18n="contact.intro">
 
-        Si deseas conocer más sobre mis proyectos académicos,
-        mi proceso de aprendizaje o mi trabajo en desarrollo web,
-        puedes contactarme por correo electrónico.
+        Si deseas conocer más sobre mis proyectos,
+        mi proceso de aprendizaje o mis conocimientos
+        en desarrollo web, puedes escribirme por correo.
 
       </p>
 
@@ -839,7 +1065,7 @@
           </strong>
 
           <span data-i18n="contact.linkedinValue">
-            Perfil profesional
+            Próximamente
           </span>
 
         </a>
@@ -852,9 +1078,13 @@
   </section>
 
 
-  <!-- ========================= FOOTER ========================= -->
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
 
   <footer>
+
 
     <a href="#inicio"
        class="arriba"
@@ -868,17 +1098,22 @@
     <p class="footer-nota"
        data-i18n="footer.note">
 
-      Sharol Beltrán · Ingeniería de Sistemas · Desarrollo Web
+      Sharol Beltrán · Ingeniería de Sistemas ·
+      Desarrolladora Web en formación
 
     </p>
 
+
   </footer>
+
 
 
   <!-- JAVASCRIPT -->
 
   <script src="script.js"></script>
 
+
 </body>
+
 </html>
 ```
