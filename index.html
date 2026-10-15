@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SHAROL BELTRÁN · Estudiante de Ingeniería de Sistemas</title>
-  <meta name="description" content="Portafolio de Sharol Beltrán, estudiante de Ingeniería de Sistemas interesada en programación, desarrollo web y tecnología.">
-
+  
   <!-- ICONOS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 
@@ -15,150 +13,142 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+  <!-- ENLACE A TU ARCHIVO CSS (style.css) -->
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    html {
-      scroll-behavior: smooth;
-    }
+<body>
+  <!-- HEADER -->
+  <div class="contenedor-header">
+    <header>
+      <div class="logo">
+        <a href="#inicio">SHAROL BELTRÁN</a>
+      </div>
 
-    body {
-      background-color: #0f172a;
-      color: #f8fafc;
-      line-height: 1.6;
-    }
+      <nav id="nav">
+        <ul>
+          <li><a href="#inicio" data-i18n="nav.home" onclick="cerrarMenu()">INICIO</a></li>
+          <li><a href="#sobremi" data-i18n="nav.about" onclick="cerrarMenu()">SOBRE MÍ</a></li>
+          <li><a href="#skills" data-i18n="nav.skills" onclick="cerrarMenu()">HABILIDADES</a></li>
+          <li><a href="#curriculum" data-i18n="nav.resume" onclick="cerrarMenu()">FORMACIÓN</a></li>
+          <li><a href="#portfolio" data-i18n="nav.portfolio" onclick="cerrarMenu()">PROYECTOS</a></li>
+          <li><a href="#contacto" data-i18n="nav.contact" onclick="cerrarMenu()">CONTACTO</a></li>
+        </ul>
+      </nav>
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+      <div class="acciones-header">
+        <button id="btn-idioma" class="btn-idioma" type="button" onclick="cambiarIdioma()" aria-label="Cambiar idioma">
+          <span class="idioma-activo">ES</span>
+          <span class="idioma-sep">/</span>
+          <span class="idioma-inactivo">EN</span>
+        </button>
 
-    ul {
-      list-style: none;
-    }
+        <button class="nav-responsive" type="button" onclick="mostrarOcultarMenu()" aria-label="Menú">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+  </div>
 
-    /* HEADER Y NAVEGACIÓN */
-    .contenedor-header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(8px);
-      z-index: 1000;
-      border-bottom: 1px solid #1e293b;
-    }
+  <main>
+    <!-- INICIO -->
+    <section id="inicio" class="inicio">
+      <div class="contenido-banner">
+        <div class="contenedor-img">
+          <img src="images/profile.jpg" alt="Foto de perfil de Sharol Beltrán" onerror="this.style.display='none'">
+        </div>
+        <h1>SHAROL BELTRÁN</h1>
+        <h2 data-i18n="hero.role">Estudiante de Ingeniería de Sistemas · Desarrolladora Web en formación</h2>
+        <div class="redes">
+          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="mailto:sbeltran80@itfip.edu.co" aria-label="Correo electrónico"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+    </section>
 
-    header {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    <!-- SOBRE MÍ -->
+    <section id="sobremi" class="sobremi">
+      <div class="contenido-seccion">
+        <h2 data-i18n="about.title">Sobre Mí</h2>
+        <p data-i18n="about.text">
+          Soy Sharol Beltrán, estudiante de Ingeniería de Sistemas y estoy dando mis primeros pasos en el aprendizaje de la programación y la tecnología. Me interesa seguir descubriendo nuevas herramientas y conocimientos que me ayuden a crecer tanto académica como profesionalmente.
+        </p>
+      </div>
+    </section>
 
-    .logo a {
-      font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: 1px;
-      color: #38bdf8;
-    }
+    <!-- HABILIDADES -->
+    <section id="skills" class="skills">
+      <div class="contenido-seccion">
+        <h2 data-i18n="skills.title">Habilidades</h2>
+        <div class="fila">
+          <div class="col">
+            <h3 data-i18n="skills.technical">Habilidades técnicas</h3>
+            <div class="skill">
+              <span class="skill-nombre">HTML & CSS</span>
+              <div class="barra-skill"><div class="progreso" data-percent="70"><span>70%</span></div></div>
+            </div>
+            <div class="skill">
+              <span class="skill-nombre">JavaScript</span>
+              <div class="barra-skill"><div class="progreso" data-percent="55"><span>55%</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    nav ul {
-      display: flex;
-      gap: 20px;
-    }
+    <!-- FORMACIÓN -->
+    <section id="curriculum" class="curriculum">
+      <div class="contenido-seccion">
+        <h2 data-i18n="resume.title">Formación y experiencia</h2>
+        <div class="fila">
+          <div class="col">
+            <h3 data-i18n="resume.education">Formación</h3>
+            <div class="item">
+              <h4 data-i18n="edu.1.title">Ingeniería de Sistemas</h4>
+              <span class="casa">ITFIP</span><span class="fecha">En curso</span>
+              <p data-i18n="edu.1.text">Formación en programación, desarrollo web, bases de datos, lógica de programación, sistemas y tecnología.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    nav ul li a {
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
+    <!-- PROYECTOS -->
+    <section id="portfolio" class="portfolio">
+      <div class="contenido-seccion">
+        <h2 data-i18n="portfolio.title">Proyectos</h2>
+        <div class="galeria">
+          
+          <!-- ENLACE CORREGIDO A LA CARPETA PROYECTOS -->
+          <a class="proyecto" href="PROYECTOS/CALCULADORA.html" target="_blank" rel="noopener">
+            <img src="images/project-2.png" alt="Calculadora básica" onerror="this.style.opacity=0">
+            <div class="overlay">
+              <h3 data-i18n="project.2.title">Calculadora básica</h3>
+              <p data-i18n="project.2.text">HTML · CSS · JavaScript</p>
+            </div>
+          </a>
 
-    nav ul li a:hover {
-      color: #38bdf8;
-    }
+        </div>
+      </div>
+    </section>
 
-    .acciones-header {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
+    <!-- CONTACTO -->
+    <section id="contacto" class="contacto">
+      <div class="contenido-seccion">
+        <h2 data-i18n="contact.title">Contacto</h2>
+        <div class="tarjetas-contacto">
+          <a class="tarjeta" href="mailto:sbeltran80@itfip.edu.co">
+            <i class="fa-solid fa-envelope"></i>
+            <strong data-i18n="contact.emailLabel">Correo</strong>
+            <span>sbeltran80@itfip.edu.co</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    .btn-idioma {
-      background: #1e293b;
-      border: 1px solid #334155;
-      color: #fff;
-      padding: 5px 12px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 0.8rem;
-    }
-
-    .idioma-activo {
-      color: #38bdf8;
-      font-weight: 700;
-    }
-
-    .idioma-inactivo {
-      color: #94a3b8;
-    }
-
-    .nav-responsive {
-      display: none;
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* SECCIONES BASE */
-    section {
-      padding: 80px 20px;
-    }
-
-    .contenido-seccion {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .contenido-seccion h2 {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 40px;
-      color: #38bdf8;
-      position: relative;
-    }
-
-    /* INICIO / HERO */
-    .inicio {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding-top: 100px;
-    }
-
-    .contenedor-img img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #38bdf8;
-      margin-bottom: 20px;
-    }
-
-    .contenido-banner h1 {
-      font-size: 2.5rem;
-      letter-spacing: 2px;
-    }
-
-    .contenido-banner h2 {
-      font-size
+  <!-- ENLACE A TU ARCHIVO JAVASCRIPT (script.js) -->
+  <script src="script.js"></script>
+</body>
+</html>
