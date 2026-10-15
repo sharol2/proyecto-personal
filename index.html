@@ -16,6 +16,7 @@
     body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; }
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
+    button { cursor: pointer; font-family: 'Poppins', sans-serif; }
 
     /* NAVEGACIÓN */
     .contenedor-header { position: fixed; top: 0; width: 100%; background: #0f172a; border-bottom: 1px solid #1e293b; z-index: 1000; }
@@ -38,14 +39,15 @@
     .redes a { font-size: 1.5rem; margin: 0 10px; color: #f8fafc; }
     .redes a:hover { color: #38bdf8; }
 
-    /* GRID REUTILIZABLE (Sobre Mí, Habilidades, Formación) */
+    /* GRID REUTILIZABLE */
     .fila { display: flex; flex-wrap: wrap; gap: 30px; }
     .col { flex: 1; min-width: 280px; background: #1e293b; padding: 25px; border-radius: 12px; }
     .col h3 { color: #38bdf8; margin-bottom: 20px; }
 
-    /* PROYECTOS */
+    /* PROYECTOS (Tarjetas) */
     .galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .proyecto { position: relative; border-radius: 10px; overflow: hidden; background: #1e293b; min-height: 200px; display: flex; align-items: flex-end; border: 1px solid #334155; }
+    .proyecto { position: relative; border-radius: 10px; overflow: hidden; background: #1e293b; min-height: 200px; display: flex; align-items: flex-end; border: 1px solid #334155; cursor: pointer; transition: transform 0.3s; }
+    .proyecto:hover { transform: translateY(-5px); border-color: #38bdf8; }
     .overlay { background: rgba(15, 23, 42, 0.9); width: 100%; padding: 20px; text-align: left; }
     .overlay h3 { font-size: 1.1rem; color: #fff; margin-bottom: 5px; }
     .overlay p { font-size: 0.85rem; color: #38bdf8; }
@@ -60,12 +62,42 @@
 
     /* FOOTER */
     footer { text-align: center; padding: 30px; background: #090d16; }
+
+    /* =======================================================
+       ESTILOS PARA LAS VENTANAS EMERGENTES DE LOS PROYECTOS
+       ======================================================= */
+    .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(15, 23, 42, 0.95); justify-content: center; align-items: center; }
+    .modal-content { background-color: #1e293b; padding: 30px; border-radius: 12px; border: 1px solid #38bdf8; width: 90%; max-width: 400px; position: relative; text-align: center; }
+    .cerrar-modal { position: absolute; top: 10px; right: 15px; font-size: 24px; color: #94a3b8; cursor: pointer; }
+    .cerrar-modal:hover { color: #ef4444; }
+    .modal h3 { color: #38bdf8; margin-bottom: 20px; }
+
+    /* Proyecto 1: Lista de Tareas */
+    .input-tarea { width: 70%; padding: 8px; border-radius: 5px; border: none; outline: none; }
+    .btn-tarea { padding: 8px 15px; border-radius: 5px; border: none; background: #38bdf8; color: #0f172a; font-weight: bold; }
+    .lista-tareas { margin-top: 15px; text-align: left; padding: 0; list-style: none; }
+    .lista-tareas li { background: #0f172a; padding: 8px; margin-bottom: 5px; border-radius: 5px; display: flex; justify-content: space-between; }
+    .btn-borrar { background: #ef4444; color: white; border: none; padding: 2px 8px; border-radius: 3px; }
+
+    /* Proyecto 2: Calculadora */
+    .calc-pantalla { width: 100%; padding: 15px; font-size: 1.5rem; text-align: right; margin-bottom: 10px; border-radius: 5px; border: none; background: #0f172a; color: white; outline: none; }
+    .calc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .calc-grid button { padding: 15px; font-size: 1.2rem; border-radius: 5px; border: none; background: #334155; color: white; }
+    .calc-grid button:hover { background: #475569; }
+    .calc-grid .btn-operador { background: #38bdf8; color: #0f172a; font-weight: bold; }
+    .calc-grid .btn-igual { grid-column: span 2; background: #22c55e; color: white; font-weight: bold; }
+
+    /* Proyecto 3: Registro */
+    .input-reg { width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: none; }
+    .tabla-reg { width: 100%; margin-top: 15px; border-collapse: collapse; }
+    .tabla-reg th, .tabla-reg td { border: 1px solid #334155; padding: 8px; text-align: center; }
+    .tabla-reg th { background: #0f172a; color: #38bdf8; }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER FIJO -->
+  <!-- HEADER -->
   <div class="contenedor-header">
     <header>
       <div class="logo"><a href="#inicio">SHAROL BELTRÁN</a></div>
@@ -91,10 +123,6 @@
         </div>
         <h1>SHAROL BELTRÁN</h1>
         <h2>Estudiante de Ingeniería de Sistemas · Desarrolladora Web en formación</h2>
-        <div class="redes">
-          <a href="#"><i class="fa-brands fa-github"></i></a>
-          <a href="mailto:sbeltran80@itfip.edu.co"><i class="fa-solid fa-envelope"></i></a>
-        </div>
       </div>
     </section>
 
@@ -109,13 +137,6 @@
             <p><strong>Correo:</strong> sbeltran80@itfip.edu.co</p>
             <p><strong>Perfil:</strong> Soy estudiante de Ingeniería de Sistemas dando mis primeros pasos en el aprendizaje de la programación y el desarrollo web.</p>
           </div>
-          <div class="col">
-            <h3>Intereses</h3>
-            <p>💻 Programación</p>
-            <p>🌐 Desarrollo Web</p>
-            <p>🗄️ Bases de Datos</p>
-            <p>📚 Aprendizaje Continuo</p>
-          </div>
         </div>
       </div>
     </section>
@@ -127,15 +148,8 @@
         <div class="fila">
           <div class="col">
             <h3>Técnicas</h3>
-            <span>HTML & CSS</span><div class="barra-skill"><div class="progreso" style="width: 70%;"></div></div>
-            <span>JavaScript</span><div class="barra-skill"><div class="progreso" style="width: 55%;"></div></div>
+            <span>HTML, CSS y JavaScript</span><div class="barra-skill"><div class="progreso" style="width: 70%;"></div></div>
             <span>MySQL</span><div class="barra-skill"><div class="progreso" style="width: 60%;"></div></div>
-          </div>
-          <div class="col">
-            <h3>Personales</h3>
-            <span>Trabajo en equipo</span><div class="barra-skill"><div class="progreso" style="width: 80%;"></div></div>
-            <span>Resolución de problemas</span><div class="barra-skill"><div class="progreso" style="width: 70%;"></div></div>
-            <span>Aprendizaje continuo</span><div class="barra-skill"><div class="progreso" style="width: 90%;"></div></div>
           </div>
         </div>
       </div>
@@ -149,46 +163,37 @@
           <div class="col">
             <h3>Formación</h3>
             <p><strong>Ingeniería de Sistemas</strong> - ITFIP (En curso)</p>
-            <br>
-            <p><strong>Técnico en Programación Web</strong> - (En curso)</p>
-          </div>
-          <div class="col">
-            <h3>Experiencia Académica</h3>
-            <p><strong>Plataforma académica (2026):</strong> Diseño para organizar notas y asistencias de estudiantes.</p>
-            <br>
-            <p><strong>Prácticas de bases de datos (2026):</strong> Creación de tablas y consultas en MySQL.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROYECTOS -->
+    <!-- PROYECTOS (AL HACER CLIC ABREN UNA VENTANA EN LA MISMA PÁGININA) -->
     <section id="portfolio">
       <div class="contenido-seccion">
-        <h2>Proyectos</h2>
+        <h2>Proyectos Interactivos</h2>
         <div class="galeria">
           
-          <a class="proyecto" href="#" target="_blank">
+          <div class="proyecto" onclick="abrirModal('modal-tareas')">
             <div class="overlay">
-              <h3>Página web personal</h3>
-              <p>HTML · CSS · Diseño web</p>
+              <h3>App Lista de Tareas</h3>
+              <p>JavaScript · Interacción</p>
             </div>
-          </a>
+          </div>
 
-          <!-- AQUÍ ESTÁ TU CALCULADORA ENLAZADA CORRECTAMENTE A LA CARPETA PROYECTOS -->
-          <a class="proyecto" href="PROYECTOS/CALCULADORA.html" target="_blank">
+          <div class="proyecto" onclick="abrirModal('modal-calc')">
             <div class="overlay">
-              <h3>Calculadora básica</h3>
-              <p>HTML · CSS · JavaScript</p>
+              <h3>Calculadora Básica</h3>
+              <p>JavaScript · Lógica Matemática</p>
             </div>
-          </a>
+          </div>
 
-          <a class="proyecto" href="#" target="_blank">
+          <div class="proyecto" onclick="abrirModal('modal-registro')">
             <div class="overlay">
-              <h3>Registro de estudiantes</h3>
-              <p>HTML · CSS · JavaScript · MySQL</p>
+              <h3>Registro de Notas</h3>
+              <p>JavaScript · Tablas Dinámicas</p>
             </div>
-          </a>
+          </div>
 
         </div>
       </div>
@@ -210,5 +215,50 @@
     <p>Sharol Beltrán · Ingeniería de Sistemas</p>
   </footer>
 
-</body>
-</html>
+  <!-- ==========================================
+       VENTANAS EMERGENTES (MODALES DE PROYECTOS)
+       ========================================== -->
+
+  <!-- MODAL 1: TAREAS -->
+  <div id="modal-tareas" class="modal">
+    <div class="modal-content">
+      <span class="cerrar-modal" onclick="cerrarModal('modal-tareas')">&times;</span>
+      <h3>Lista de Tareas</h3>
+      <input type="text" id="inputTarea" class="input-tarea" placeholder="Escribe una tarea...">
+      <button class="btn-tarea" onclick="agregarTarea()">Añadir</button>
+      <ul id="listaTareas" class="lista-tareas"></ul>
+    </div>
+  </div>
+
+  <!-- MODAL 2: CALCULADORA -->
+  <div id="modal-calc" class="modal">
+    <div class="modal-content">
+      <span class="cerrar-modal" onclick="cerrarModal('modal-calc')">&times;</span>
+      <h3>Calculadora</h3>
+      <input type="text" id="pantallaCalc" class="calc-pantalla" readonly>
+      <div class="calc-grid">
+        <button onclick="escribirCalc('7')">7</button>
+        <button onclick="escribirCalc('8')">8</button>
+        <button onclick="escribirCalc('9')">9</button>
+        <button class="btn-operador" onclick="escribirCalc('/')">/</button>
+        <button onclick="escribirCalc('4')">4</button>
+        <button onclick="escribirCalc('5')">5</button>
+        <button onclick="escribirCalc('6')">6</button>
+        <button class="btn-operador" onclick="escribirCalc('*')">X</button>
+        <button onclick="escribirCalc('1')">1</button>
+        <button onclick="escribirCalc('2')">2</button>
+        <button onclick="escribirCalc('3')">3</button>
+        <button class="btn-operador" onclick="escribirCalc('-')">-</button>
+        <button class="btn-operador" onclick="limpiarCalc()">C</button>
+        <button onclick="escribirCalc('0')">0</button>
+        <button class="btn-operador" onclick="escribirCalc('+')">+</button>
+        <button class="btn-igual" onclick="calcularTotal()">=</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: REGISTRO -->
+  <div id="modal-registro" class="modal">
+    <div class="modal-content">
+      <span class="cerrar-modal" onclick="cerrarModal('modal-registro')">&times;</span>
+      <h3>Registro de Notas</h3>
