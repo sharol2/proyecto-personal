@@ -1,140 +1,617 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHAROL BELTRÁN · Portafolio</title>
+
+  <title>SHAROL BELTRÁN | Portafolio</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    html { scroll-behavior: smooth; }
-    body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-    .contenedor-header { position: fixed; top: 0; width: 100%; background: #0f172a; border-bottom: 1px solid #1e293b; z-index: 1000; }
-    header { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
-    .logo a { font-weight: 700; font-size: 1.2rem; color: #38bdf8; }
-    nav ul { display: flex; gap: 20px; }
-    nav ul li a:hover { color: #38bdf8; }
-    section { padding: 100px 20px 60px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
-    .contenido-seccion { max-width: 1100px; margin: 0 auto; width: 100%; }
-    .contenido-seccion h2 { font-size: 2rem; text-align: center; margin-bottom: 40px; color: #38bdf8; }
-    .inicio { align-items: center; text-align: center; }
-    .contenedor-img img { width: 160px; height: 160px; border-radius: 50%; border: 4px solid #38bdf8; margin-bottom: 20px; object-fit: cover; }
-    .fila { display: flex; flex-wrap: wrap; gap: 30px; }
-    .col { flex: 1; min-width: 280px; background: #1e293b; padding: 25px; border-radius: 12px; }
-    .col h3 { color: #38bdf8; margin-bottom: 20px; }
-    .galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .proyecto { position: relative; border-radius: 10px; overflow: hidden; background: #1e293b; min-height: 200px; display: flex; align-items: flex-end; border: 1px solid #334155; transition: transform 0.3s; }
-    .proyecto:hover { transform: translateY(-5px); border-color: #38bdf8; }
-    .overlay { background: rgba(15, 23, 42, 0.9); width: 100%; padding: 20px; text-align: left; }
-    .overlay h3 { font-size: 1.1rem; color: #fff; margin-bottom: 5px; }
-    .overlay p { font-size: 0.85rem; color: #38bdf8; }
-    .barra-skill { width: 100%; background: #0f172a; height: 10px; border-radius: 10px; margin: 8px 0 20px 0; }
-    .progreso { height: 100%; background: #38bdf8; border-radius: 10px; }
-    .tarjeta { display: block; background: #1e293b; padding: 25px; border-radius: 10px; text-align: center; color: white; margin-bottom: 20px; }
-    .tarjeta i { font-size: 2rem; color: #38bdf8; margin-bottom: 10px; }
-    footer { text-align: center; padding: 30px; background: #090d16; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      background: #fff7fb;
+      color: #493743;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .contenedor-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 247, 251, 0.97);
+      border-bottom: 1px solid #f3d5e4;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(120, 65, 95, 0.08);
+    }
+
+    header {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo a {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #d65b91;
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #d65b91;
+    }
+
+    .botones-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .idioma {
+      border: none;
+      background: #d65b91;
+      color: white;
+      padding: 9px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: 0.3s;
+    }
+
+    .idioma:hover {
+      background: #b94478;
+    }
+
+    .menu-movil {
+      display: none;
+      border: none;
+      background: none;
+      color: #d65b91;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 110px 20px 60px;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contenido-seccion {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .contenido-seccion h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #d65b91;
+    }
+
+    .inicio {
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #fff7fb, #fce4ef);
+      min-height: 100vh;
+    }
+
+    .contenedor-img img {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: 5px solid #e99cbd;
+      margin-bottom: 20px;
+      object-fit: cover;
+      box-shadow: 0 5px 20px rgba(214, 91, 145, 0.18);
+    }
+
+    .inicio h1 {
+      font-size: 2.5rem;
+      color: #c34c83;
+      margin-bottom: 10px;
+    }
+
+    .inicio h2 {
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: #765568;
+    }
+
+    .fila {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .col {
+      flex: 1;
+      min-width: 280px;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      border: 1px solid #f4d6e4;
+      box-shadow: 0 5px 18px rgba(120, 65, 95, 0.07);
+    }
+
+    .col h3 {
+      color: #d65b91;
+      margin-bottom: 18px;
+    }
+
+    .col p {
+      margin-bottom: 10px;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .proyecto {
+      border-radius: 15px;
+      overflow: hidden;
+      background: white;
+      min-height: 210px;
+      display: flex;
+      align-items: flex-end;
+      border: 1px solid #f1c9dc;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 5px 15px rgba(120, 65, 95, 0.07);
+    }
+
+    .proyecto:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 22px rgba(214, 91, 145, 0.16);
+    }
+
+    .overlay {
+      background: linear-gradient(135deg, #fff, #fce8f1);
+      width: 100%;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .overlay h3 {
+      font-size: 1.1rem;
+      color: #c34c83;
+      margin-bottom: 8px;
+    }
+
+    .overlay p {
+      font-size: 0.9rem;
+      color: #765568;
+    }
+
+    .barra-skill {
+      width: 100%;
+      background: #f6e3ec;
+      height: 11px;
+      border-radius: 10px;
+      margin: 8px 0 22px;
+      overflow: hidden;
+    }
+
+    .progreso {
+      height: 100%;
+      background: linear-gradient(90deg, #e99cbd, #d65b91);
+      border-radius: 10px;
+    }
+
+    .tarjeta {
+      display: block;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      color: #493743;
+      margin-bottom: 20px;
+      border: 1px solid #f4d6e4;
+    }
+
+    .tarjeta i {
+      font-size: 2rem;
+      color: #d65b91;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      background: #f4d6e4;
+      color: #765568;
+    }
+
+    @media (max-width: 850px) {
+      header {
+        flex-wrap: wrap;
+      }
+
+      .menu-movil {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        width: 100%;
+        padding-top: 15px;
+      }
+
+      nav.activo {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul li a {
+        display: block;
+        padding: 5px 0;
+      }
+
+      .botones-header {
+        margin-left: auto;
+        margin-right: 15px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 100px 18px 50px;
+      }
+
+      .inicio h1 {
+        font-size: 2rem;
+      }
+
+      .inicio h2 {
+        font-size: 1rem;
+      }
+
+      .contenido-seccion h2 {
+        font-size: 1.7rem;
+      }
+
+      .contenedor-img img {
+        width: 145px;
+        height: 145px;
+      }
+
+      .col {
+        min-width: 100%;
+      }
+
+      .galeria {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding: 12px 15px;
+      }
+
+      .logo a {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <div class="contenedor-header">
     <header>
-      <div class="logo"><a href="#inicio">SHAROL BELTRÁN</a></div>
-      <nav>
+
+      <div class="logo">
+        <a href="#inicio">SHAROL BELTRÁN</a>
+      </div>
+
+      <div class="botones-header">
+        <button class="idioma" id="btnIdioma" type="button" onclick="cambiarIdioma()">
+          EN
+        </button>
+
+        <button class="menu-movil" type="button" id="btnMenu"
+          aria-label="Abrir menú" aria-expanded="false" aria-controls="navegacion"
+          onclick="abrirMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <nav id="navegacion">
         <ul>
-          <li><a href="#inicio">INICIO</a></li>
-          <li><a href="#sobremi">SOBRE MÍ</a></li>
-          <li><a href="#skills">HABILIDADES</a></li>
-          <li><a href="#curriculum">FORMACIÓN</a></li>
-          <li><a href="#portfolio">PROYECTOS</a></li>
+          <li><a href="#inicio" data-es="INICIO" data-en="HOME">INICIO</a></li>
+          <li><a href="#sobremi" data-es="SOBRE MÍ" data-en="ABOUT ME">SOBRE MÍ</a></li>
+          <li><a href="#skills" data-es="HABILIDADES" data-en="SKILLS">HABILIDADES</a></li>
+          <li><a href="#curriculum" data-es="FORMACIÓN" data-en="EDUCATION">FORMACIÓN</a></li>
+          <li><a href="#portfolio" data-es="PROYECTOS" data-en="PROJECTS">PROYECTOS</a></li>
         </ul>
       </nav>
+
     </header>
   </div>
 
   <main>
+
     <section id="inicio" class="inicio">
       <div class="contenido-seccion">
+
         <div class="contenedor-img">
-          <img src="images/profile.jpg" alt="Sharol Beltrán" onerror="this.style.display='none'">
+          <img src="images/profile.jpg" alt="Sharol Beltrán"
+            onerror="this.style.display='none'">
         </div>
+
         <h1>SHAROL BELTRÁN</h1>
-        <h2>Estudiante de Ingeniería de Sistemas · Desarrolladora Web en formación</h2>
+
+        <h2
+          data-es="Estudiante de Ingeniería de Sistemas · Desarrolladora Web en formación"
+          data-en="Systems Engineering Student · Web Developer in Training">
+          Estudiante de Ingeniería de Sistemas · Desarrolladora Web en formación
+        </h2>
+
       </div>
     </section>
 
     <section id="sobremi">
       <div class="contenido-seccion">
-        <h2>Sobre Mí</h2>
+
+        <h2 data-es="Sobre Mí" data-en="About Me">Sobre Mí</h2>
+
         <div class="fila">
           <div class="col">
-            <h3>Información</h3>
-            <p><strong>Ubicación:</strong> Colombia</p>
-            <p><strong>Correo:</strong> sbeltran80@itfip.edu.co</p>
-            <p><strong>Perfil:</strong> Estudiante de Ingeniería de Sistemas dando mis primeros pasos en programación.</p>
+
+            <h3 data-es="Información personal" data-en="Personal Information">
+              Información personal
+            </h3>
+
+            <p>
+              <strong data-es="Ubicación:" data-en="Location:">Ubicación:</strong>
+              <span data-es="Colombia" data-en="Colombia">Colombia</span>
+            </p>
+
+            <p>
+              <strong data-es="Correo:" data-en="Email:">Correo:</strong>
+              <a href="mailto:sbeltran80@itfip.edu.co">sbeltran80@itfip.edu.co</a>
+            </p>
+
+            <p>
+              <strong data-es="Perfil:" data-en="Profile:">Perfil:</strong>
+              <span
+                data-es="Soy estudiante de Ingeniería de Sistemas y estoy dando mis primeros pasos en el aprendizaje de la programación y la tecnología. Me emociona seguir descubriendo nuevas herramientas y conocimientos."
+                data-en="I am a Systems Engineering student taking my first steps in programming and technology. I am excited to keep discovering new tools and knowledge.">
+                Soy estudiante de Ingeniería de Sistemas y estoy dando mis primeros pasos en el aprendizaje de la programación y la tecnología. Me emociona seguir descubriendo nuevas herramientas y conocimientos.
+              </span>
+            </p>
+
           </div>
         </div>
+
       </div>
     </section>
 
     <section id="skills">
       <div class="contenido-seccion">
-        <h2>Habilidades</h2>
+
+        <h2 data-es="Habilidades" data-en="Skills">Habilidades</h2>
+
         <div class="fila">
           <div class="col">
-            <h3>Técnicas</h3>
-            <span>HTML, CSS y JavaScript</span><div class="barra-skill"><div class="progreso" style="width: 70%;"></div></div>
-            <span>MySQL</span><div class="barra-skill"><div class="progreso" style="width: 60%;"></div></div>
+
+            <h3 data-es="Habilidades técnicas" data-en="Technical Skills">
+              Habilidades técnicas
+            </h3>
+
+            <span>HTML, CSS y JavaScript</span>
+            <div class="barra-skill">
+              <div class="progreso" style="width: 70%;"></div>
+            </div>
+
+            <span>MySQL</span>
+            <div class="barra-skill">
+              <div class="progreso" style="width: 60%;"></div>
+            </div>
+
+            <span>Java</span>
+            <div class="barra-skill">
+              <div class="progreso" style="width: 50%;"></div>
+            </div>
+
+            <span>Git y GitHub</span>
+            <div class="barra-skill">
+              <div class="progreso" style="width: 55%;"></div>
+            </div>
+
           </div>
         </div>
+
       </div>
     </section>
 
     <section id="curriculum">
       <div class="contenido-seccion">
-        <h2>Formación</h2>
+
+        <h2 data-es="Formación académica" data-en="Education">
+          Formación académica
+        </h2>
+
         <div class="fila">
           <div class="col">
-            <p><strong>Ingeniería de Sistemas</strong> - ITFIP (En curso)</p>
+
+            <h3 data-es="Estudios actuales" data-en="Current Studies">
+              Estudios actuales
+            </h3>
+
+            <p>
+              <strong
+                data-es="Ingeniería de Sistemas"
+                data-en="Systems Engineering">
+                Ingeniería de Sistemas
+              </strong>
+              - ITFIP
+            </p>
+
+            <p
+              data-es="Actualmente en formación."
+              data-en="Currently studying.">
+              Actualmente en formación.
+            </p>
+
           </div>
         </div>
+
       </div>
     </section>
 
     <section id="portfolio">
       <div class="contenido-seccion">
-        <h2>Proyectos</h2>
+
+        <h2 data-es="Mis Proyectos" data-en="My Projects">
+          Mis Proyectos
+        </h2>
+
         <div class="galeria">
-          
-          <!-- ENLACES A LAS OTRAS PÁGINAS -->
-          <a class="proyecto" href="PROYECTOS/tareas.html" target="_blank">
+
+          <a class="proyecto" href="PROYECTOS/tareas.html" target="_blank" rel="noopener noreferrer">
             <div class="overlay">
-              <h3>App Lista de Tareas</h3>
-              <p>Clic para abrir el proyecto</p>
+              <h3 data-es="App Lista de Tareas" data-en="To-Do List App">
+                App Lista de Tareas
+              </h3>
+              <p
+                data-es="Clic para abrir el proyecto"
+                data-en="Click to open the project">
+                Clic para abrir el proyecto
+              </p>
             </div>
           </a>
 
-          <a class="proyecto" href="PROYECTOS/calculadora.html" target="_blank">
+          <a class="proyecto" href="PROYECTOS/calculadora.html" target="_blank" rel="noopener noreferrer">
             <div class="overlay">
-              <h3>Calculadora Básica</h3>
-              <p>Clic para abrir el proyecto</p>
+              <h3 data-es="Calculadora Básica" data-en="Basic Calculator">
+                Calculadora Básica
+              </h3>
+              <p
+                data-es="Clic para abrir el proyecto"
+                data-en="Click to open the project">
+                Clic para abrir el proyecto
+              </p>
             </div>
           </a>
 
-          <a class="proyecto" href="PROYECTOS/registro.html" target="_blank">
+          <a class="proyecto" href="PROYECTOS/registro.html" target="_blank" rel="noopener noreferrer">
             <div class="overlay">
-              <h3>Registro de Notas</h3>
-              <p>Clic para abrir el proyecto</p>
+              <h3 data-es="Registro de Notas" data-en="Grade Registration">
+                Registro de Notas
+              </h3>
+              <p
+                data-es="Clic para abrir el proyecto"
+                data-en="Click to open the project">
+                Clic para abrir el proyecto
+              </p>
             </div>
           </a>
 
         </div>
       </div>
     </section>
+
   </main>
 
-  <footer><p>Sharol Beltrán · Ingeniería de Sistemas</p></footer>
+  <footer>
+    <p
+      data-es="Sharol Beltrán · Ingeniería de Sistemas · Todos los derechos reservados"
+      data-en="Sharol Beltrán · Systems Engineering · All rights reserved">
+      Sharol Beltrán · Ingeniería de Sistemas · Todos los derechos reservados
+    </p>
+  </footer>
+
+  <script>
+    let idiomaActual = "es";
+
+    function cambiarIdioma() {
+      idiomaActual = idiomaActual === "es" ? "en" : "es";
+
+      document.documentElement.lang = idiomaActual;
+
+      const elementos = document.querySelectorAll("[data-es][data-en]");
+
+      elementos.forEach(function(elemento) {
+        elemento.textContent = elemento.getAttribute("data-" + idiomaActual);
+      });
+
+      document.getElementById("btnIdioma").textContent =
+        idiomaActual === "es" ? "EN" : "ES";
+    }
+
+    function abrirMenu() {
+      const navegacion = document.getElementById("navegacion");
+      const boton = document.getElementById("btnMenu");
+      const icono = boton.querySelector("i");
+
+      navegacion.classList.toggle("activo");
+
+      const abierto = navegacion.classList.contains("activo");
+      boton.setAttribute("aria-expanded", abierto);
+
+      icono.className = abierto ? "fas fa-times" : "fas fa-bars";
+    }
+
+    document.querySelectorAll("#navegacion a").forEach(function(enlace) {
+      enlace.addEventListener("click", function() {
+        document.getElementById("navegacion").classList.remove("activo");
+        document.getElementById("btnMenu").setAttribute("aria-expanded", "false");
+        document.querySelector("#btnMenu i").className = "fas fa-bars";
+      });
+    });
+  </script>
+
 </body>
 </html>
